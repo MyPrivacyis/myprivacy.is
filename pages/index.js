@@ -1,7 +1,7 @@
 import { Client } from "@notionhq/client";
 import styled from "styled-components";
 
-import Card from "../components/card/card";
+import Section from "../components/card/card";
 
 //Styled components
 const Main = styled.main`
@@ -13,10 +13,11 @@ const Main = styled.main`
   }
 `;
 
-export default function Home({ resources }) {
+export default function Home({ vpn, browser }) {
   return (
     <Main>
-      <Card resources={resources} />
+      <Section tools={vpn} />
+      <Section tools={browser} />
     </Main>
   );
 }
@@ -27,14 +28,52 @@ export async function getStaticProps() {
     auth: process.env.NOTION_API_KEY,
   });
 
-  const response = await notion.databases.query({
+  const vpn = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID,
     filter: {
-      property: "Status",
-      select: {
-        equals: "Public",
-      },
+      and: [
+        {
+          property: "Live",
+          select: {
+            equals: "Yes",
+          },
+        },
+        {
+          property: "Type",
+          select: {
+            equals: "VPN",
+          },
+        },
+      ],
     },
+
+    sorts: [
+      {
+        timestamp: "last_edited_time",
+        direction: "descending",
+      },
+    ],
+  });
+
+  const browser = await notion.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID,
+    filter: {
+      and: [
+        {
+          property: "Live",
+          select: {
+            equals: "Yes",
+          },
+        },
+        {
+          property: "Type",
+          select: {
+            equals: "Browser",
+          },
+        },
+      ],
+    },
+
     sorts: [
       {
         timestamp: "last_edited_time",
@@ -45,7 +84,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      resources: response.results,
+      vpn: vpn.results,
+      browser: browser.results,
     },
 
     revalidate: 1,

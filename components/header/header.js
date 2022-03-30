@@ -71,7 +71,7 @@ export default function HeaderMain({ themeToggler, isDarkTheme }) {
   return (
     <Header>
       <HeaderContainer>
-        <Logo>Resource.wtf</Logo>
+        <Logo>MyPrivacy.is</Logo>
         <Actions>
           <Credit />
           <ThemeSwitcher onClick={() => themeToggler()}>
