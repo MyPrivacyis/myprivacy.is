@@ -7,8 +7,8 @@ const Header = styled.header`
   height: 80px;
   padding: 0 48px;
   width: 100%;
-  backdrop-filter: saturate(180%) blur(48px);
-  -webkit-backdrop-filter: saturate(180%) blur(48px);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
   z-index: 99;
   position: sticky;
   top: 0;
