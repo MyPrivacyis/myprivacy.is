@@ -23,12 +23,17 @@ const CreditContainer = styled.a`
   @media (max-width: 992px) {
     display: none;
   }
+
+  span {
+    color: ${(props) => props.theme.colors.red};
+    margin-right: 4px;
+  }
 `;
 
 export default function Credit() {
   return (
     <CreditContainer href="https://twitter.com/gsigurdarson" target="_blank">
-      @GSigurdarson
+      <span>❤️</span> Donate
     </CreditContainer>
   );
 }

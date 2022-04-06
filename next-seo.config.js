@@ -1,4 +1,4 @@
-const title = "Resource.wtf";
+const title = "MyPrivacy — Is a fundamental human right.";
 const description =
   "Resource.wtf is a curated list of design related things I find while searching the internet.";
 

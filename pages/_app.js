@@ -14,12 +14,15 @@ import Header from "../components/header/header";
 const lightTheme = {
   body: "#ffffff",
   titleColor: "#141414",
-  bodyText: "#676767",
+  bodyText: "#14141482",
   panel: "#fafafa",
-  panelHover: "#F0F0F0",
+  panelHover: "#14141412",
   border: "#14141406",
   toggle: "#7868D5",
   tag: "#14141412",
+  navigator: "rgba(255, 255, 255, 0.82)",
+  navigatorBorder: "#14141412",
+  shadow: "rgb(255, 255, 255, 1)",
 
   colors: {
     red: "#EC506E",
@@ -29,12 +32,15 @@ const lightTheme = {
 const darkTheme = {
   body: "#000000",
   titleColor: "#ffffff",
-  bodyText: "#B1B1B1",
+  bodyText: "#ffffff82",
   panel: "#141414",
-  panelHover: "#222222",
+  panelHover: "#ffffff18",
   border: "#ffffff06",
   toggle: "#F5A623",
   tag: "#ffffff12",
+  navigator: "rgba(20, 20, 20, 0.82)",
+  navigatorBorder: "#ffffff12",
+  shadow: "rgb(0, 0, 0, 1)",
 
   colors: {
     red: "#EC506E",
@@ -70,6 +76,11 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.titleColor};
     font-family: 'Inter', sans-serif;
   }
+
+  ::selection {
+    background-color: #55ACEE12;
+    color: #55ACEE;
+  }
 `;
 
 export default function App({ Component, pageProps }) {
@@ -82,9 +93,9 @@ export default function App({ Component, pageProps }) {
     //  - Do not include https://
     //  - This must be an exact match of your domain.
     //  - If you're using www. for your domain, make sure you include that here.
-    Fathom.load("MWKZHZVB", {
-      includedDomains: ["resource.wtf"],
-      url: "https://eight-distinct.resource.wtf/script.js",
+    Fathom.load("ALSMHWAO", {
+      includedDomains: ["myprivacy.is"],
+      url: "https://moth.myprivacy.is/script.js",
     });
 
     function onRouteChangeComplete() {

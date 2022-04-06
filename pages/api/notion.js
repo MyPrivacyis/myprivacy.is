@@ -11,9 +11,9 @@ export default async (req, res) => {
   const response = await notion.databases.query({
     database_id: NOTION_DATABASE_ID,
     filter: {
-      property: "Status",
+      property: "Live",
       select: {
-        equals: "Public",
+        equals: "Yes",
       },
     },
   });
