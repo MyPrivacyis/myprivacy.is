@@ -1,20 +1,20 @@
 const title = "MyPrivacy — Is a fundamental human right.";
 const description =
-  "Resource.wtf is a curated list of design related things I find while searching the internet.";
+  "MyPrivacy offers a curated list of 'Privacy Focused' tools that help you take back control of your data and privacy. Instead of using Google, consider switching to DuckDuckGo. Afraid that your ISP is selling your data to advertisers? Use a VPN.";
 
 const SEO = {
   title,
   description,
-  canonical: "https://resource.wtf",
+  canonical: "https://myprivacy.is",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://resource.wtf",
+    url: "https://myprivacy.is",
     title,
     description,
     images: [
       {
-        url: "https://resource.wtf/img/social_image.jpg",
+        url: "https://resource.wtf/img/social_image.png",
         alt: title,
         width: 1200,
         height: 630,
