@@ -110,7 +110,7 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const isDarkTheme = theme === "dark";
   const themeToggler = () => {
     const updatedTheme = isDarkTheme ? "light" : "dark";
