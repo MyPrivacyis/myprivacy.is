@@ -133,41 +133,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          href="/fonts/Inter-SemiBold.ttf"
-          as="font"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Inter-Regular.ttf"
-          as="font"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/img/meta/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/img/meta/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/img/meta/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/img/meta/site.webmanifest" />
-        <link
-          rel="mask-icon"
-          href="/img/meta/safari-pinned-tab.svg"
-          color="#141414"
-        />
+        <link rel="icon" type="image/svg+xml" href="/img/meta/favicon.svg" />
+        <link rel="icon" type="image/png" href="/img/meta/favicon.png" />
         <meta name="robots" content="follow, index" />
       </Head>
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
