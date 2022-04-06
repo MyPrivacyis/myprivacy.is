@@ -76,6 +76,11 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.titleColor};
     font-family: 'Inter', sans-serif;
   }
+
+  ::selection {
+    background-color: #55ACEE12;
+    color: #55ACEE;
+  }
 `;
 
 export default function App({ Component, pageProps }) {
