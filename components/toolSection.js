@@ -1,13 +1,12 @@
 import styled from "styled-components";
-var dayjs = require("dayjs");
 
 //Styled components
-const CardGrid = styled.div`
+const Section = styled.section`
   max-width: 576px;
   margin: 0 auto 148px auto;
 `;
 
-const CardTitle = styled.h2`
+const Title = styled.h2`
   font-size: 24px;
   margin-bottom: 16px;
 `;
@@ -71,12 +70,12 @@ const Tool = styled.div`
     height: 24px;
     width: 24px;
     margin-right: 16px;
-    border-radius: 6px;
+    border-radius: 4px;
   }
 
   h3 {
     font-size: 16px;
-    color: ${(props) => props.theme.bodyText};
+    color: ${(props) => props.theme.titleColor};
     font-weight: 400;
   }
 `;
@@ -107,8 +106,8 @@ const Discount = styled.a`
   align-items: center;
   padding: 12px;
   margin-top: 16px;
-  background-color: #3291ff24;
-  border: 0.5px solid #3291ff;
+  background-color: #55acee24;
+  border: 0.5px solid #55acee;
   color: #3291ff;
   border-radius: 8px;
   text-decoration: none;
@@ -182,10 +181,10 @@ const Article = styled.a`
   }
 `;
 
-export default function CardFile({ title, description, tools, articles }) {
+export default function CardFile({ id, title, description, tools, articles }) {
   return (
-    <CardGrid>
-      <CardTitle>{title}</CardTitle>
+    <Section id={id}>
+      <Title>{title}</Title>
       <Description>{description}</Description>
       <Spacer />
       <SectionTitle>Tools</SectionTitle>
@@ -434,6 +433,6 @@ export default function CardFile({ title, description, tools, articles }) {
           </Article>
         ))}
       </ArticleContainer>
-    </CardGrid>
+    </Section>
   );
 }
