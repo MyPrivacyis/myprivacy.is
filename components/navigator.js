@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const NavigatorContainer = styled.ul`
   position: fixed;
-  width: 600px;
+  width: 624px;
   bottom: 24px;
   left: 50%;
   margin-left: -300px;
