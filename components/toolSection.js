@@ -199,7 +199,7 @@ export default function CardFile({ id, title, description, tools, articles }) {
               <Info>
                 <Tool>
                   <img
-                    src={data.icon.file.url}
+                    src={data.properties.image.rich_text[0].plain_text + ".svg"}
                     alt={data.properties.Name.title[0].plain_text}
                   />
                   <h3>{data.properties.Name.title[0].plain_text}</h3>
