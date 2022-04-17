@@ -8,7 +8,7 @@ const NavigatorContainer = styled.ul`
   width: 624px;
   bottom: 24px;
   left: 50%;
-  margin-left: -300px;
+  margin-left: -312px;
   background: ${(props) => props.theme.navigator};
   border: 1px solid ${(props) => props.theme.navigatorBorder};
   border-radius: 16px;
