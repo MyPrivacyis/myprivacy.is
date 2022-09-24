@@ -125,6 +125,13 @@ export default function App({ Component, pageProps }) {
         <link rel='icon' type='image/svg+xml' href='/img/meta/favicon.svg' />
         <link rel='icon' type='image/png' href='/img/meta/favicon.png' />
         <meta name='robots' content='follow, index' />
+        <script
+          defer
+          type='text/javascript'
+          src='https://api.pirsch.io/pirsch.js'
+          id='pirschjs'
+          data-code='GaaTJGFYEcdMri0e53NrSyN39pIQJGKQ'
+        />
       </Head>
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
         <GlobalStyle />
