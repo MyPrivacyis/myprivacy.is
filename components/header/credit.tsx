@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 //Styled Compoenents
 const CreditContainer = styled.a`
@@ -9,14 +9,14 @@ const CreditContainer = styled.a`
   justify-content: center;
   margin-right: 8px;
   border-radius: 8px;
-  background-color: ${(props) => props.theme.panel};
+  background-color: ${({ theme }) => theme.colors.panel};
   cursor: pointer;
   font-size: 16px;
   text-decoration: none;
-  color: ${(props) => props.theme.bodyText};
+  color: ${({ theme }) => theme.colors.bodyText};
 
   &:hover {
-    background-color: ${(props) => props.theme.panelHover};
+    background-color: ${({ theme }) => theme.colors.panelHover};
     transition: background-color 0.2s ease;
   }
 
@@ -32,7 +32,7 @@ const CreditContainer = styled.a`
 
 export default function Credit() {
   return (
-    <CreditContainer href="https://twitter.com/gsigurdarson" target="_blank">
+    <CreditContainer href='https://twitter.com/gsigurdarson' target='_blank'>
       <span>❤️</span> Donate
     </CreditContainer>
   );

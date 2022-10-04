@@ -33,7 +33,7 @@ const Logo = styled.a`
   align-items: center;
   font-size: 24px;
   font-weight: 600;
-  color: ${(props) => props.theme.titleColor};
+  color: ${({ theme }) => theme.colors.titleColor};
   text-decoration: none;
 
   svg {

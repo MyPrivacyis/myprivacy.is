@@ -12,19 +12,18 @@ import Header from '../components/header/header';
 
 //Themes
 const theme: DefaultTheme = {
-  body: '#000000',
-  titleColor: '#ffffff',
-  bodyText: '#ffffff82',
-  panel: '#141414',
-  panelHover: '#ffffff18',
-  border: '#ffffff06',
-  toggle: '#F5A623',
-  tag: '#ffffff12',
-  navigator: 'rgba(20, 20, 20, 0.82)',
-  navigatorBorder: '#ffffff12',
-  shadow: 'rgb(0, 0, 0, 1)',
-
   colors: {
+    body: '#000000',
+    titleColor: '#ffffff',
+    bodyText: '#ffffff82',
+    panel: '#141414',
+    panelHover: '#ffffff18',
+    border: '#ffffff06',
+    toggle: '#F5A623',
+    tag: '#ffffff12',
+    navigator: 'rgba(20, 20, 20, 0.82)',
+    navigatorBorder: '#ffffff12',
+    shadow: 'rgb(0, 0, 0, 1)',
     red: '#EC506E',
   },
 };
