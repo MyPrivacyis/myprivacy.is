@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }) {
           type='text/javascript'
           src='https://api.pirsch.io/pirsch.js'
           id='pirschjs'
-          data-code='GaaTJGFYEcdMri0e53NrSyN39pIQJGKQ'
+          data-code='PpimrpsmdSzPpwuWhdiwnD3c5DpRxUCH'
         />
       </Head>
       <ThemeProvider theme={theme}>
