@@ -20,7 +20,7 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  color: ${(props) => props.theme.bodyText};
+  color: ${({ theme }) => theme.colors.bodyText};
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 24px;
@@ -31,13 +31,13 @@ const Spacer = styled.div`
   width: 100%;
   height: 1px;
   border-radius: 1px;
-  background-color: ${(props) => props.theme.bodyText};
+  background-color: ${({ theme }) => theme.colors.bodyText};
   opacity: 0.12;
   margin-bottom: 24px;
 `;
 
 const CryptoTitle = styled.p`
-  color: ${(props) => props.theme.titleColor};
+  color: ${({ theme }) => theme.colors.titleColor};
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 8px;
@@ -45,21 +45,21 @@ const CryptoTitle = styled.p`
 
 const Input = styled.input`
   width: 100%;
-  background-color: ${(props) => props.theme.panel};
-  border: 1px solid ${(props) => props.theme.navigatorBorder};
+  background-color: ${({ theme }) => theme.colors.panel};
+  border: 1px solid ${({ theme }) => theme.colors.navigatorBorder};
   padding: 8px 16px;
   display: flex;
   align-items: center;
   height: 48px;
   border-radius: 16px;
-  color: ${(props) => props.theme.bodyText};
+  color: ${({ theme }) => theme.colors.bodyText};
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 16px;
 
   &:focus {
     outline: none;
-    border: 1px solid ${(props) => props.theme.navigatorBorder};
+    border: 1px solid ${({ theme }) => theme.colors.navigatorBorder};
   }
 `;
 

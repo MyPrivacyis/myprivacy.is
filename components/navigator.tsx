@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import styled from 'styled-components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 const NavigatorContainer = styled.ul`
   position: fixed;
@@ -9,8 +9,8 @@ const NavigatorContainer = styled.ul`
   bottom: 24px;
   left: 50%;
   margin-left: -312px;
-  background: ${(props) => props.theme.navigator};
-  border: 1px solid ${(props) => props.theme.navigatorBorder};
+  background: ${({ theme }) => theme.colors.navigator};
+  border: 1px solid ${({ theme }) => theme.colors.navigatorBorder};
   border-radius: 16px;
   list-style: none;
   display: flex;
@@ -19,14 +19,13 @@ const NavigatorContainer = styled.ul`
   backdrop-filter: saturate(180%) blur(16px);
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   z-index: 98;
-  box-shadow: 0px 0px 40px 0px ${(props) => props.theme.shadow},
-    0px 0px 100px 0px ${(props) => props.theme.shadow};
-  box-shadow: ;
+  box-shadow: 0px 0px 40px 0px ${({ theme }) => theme.colors.shadow},
+    0px 0px 100px 0px ${({ theme }) => theme.colors.shadow};
   padding: 8px 16px;
 
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.bodyText};
+    color: ${({ theme }) => theme.colors.bodyText};
   }
 
   li {
@@ -38,16 +37,16 @@ const NavigatorContainer = styled.ul`
     padding: 0 8px;
     margin: 0 4px;
     border-radius: 8px;
-    color: ${(props) => props.theme.bodyText};
+    color: ${({ theme }) => theme.colors.bodyText};
 
     &:hover {
-      background: ${(props) => props.theme.panelHover};
+      background: ${({ theme }) => theme.colors.panelHover};
       transition: background-color 0.2s ease;
     }
 
     span {
       margin-right: 4px;
-      color: ${(props) => props.theme.colors.red};
+      color: ${({ theme }) => theme.colors.red};
     }
   }
 
@@ -76,39 +75,39 @@ export default function navigator() {
     <>
       <NavigatorContainer>
         <li>
-          <AnchorLink offset="100" href="#VPN">
+          <AnchorLink offset='100' href='#VPN'>
             VPN
           </AnchorLink>
         </li>
         <li>
-          <AnchorLink offset="100" href="#Browser">
+          <AnchorLink offset='100' href='#Browser'>
             Browser
           </AnchorLink>
         </li>
         <li>
-          <AnchorLink offset="100" href="#Email">
+          <AnchorLink offset='100' href='#Email'>
             Email
           </AnchorLink>
         </li>
         <li>
-          <AnchorLink offset="100" href="#Messenger">
+          <AnchorLink offset='100' href='#Messenger'>
             Messenger
           </AnchorLink>
         </li>
         <li>
-          <AnchorLink offset="100" href="#DNS">
+          <AnchorLink offset='100' href='#DNS'>
             DNS
           </AnchorLink>
         </li>
         <li>
-          <AnchorLink offset="100" href="#Search">
+          <AnchorLink offset='100' href='#Search'>
             Search
           </AnchorLink>
         </li>
 
         <Spacer />
         <li>
-          <Link href="/donate">
+          <Link href='/donate'>
             <a>
               <span>❤️</span> Donate
             </a>

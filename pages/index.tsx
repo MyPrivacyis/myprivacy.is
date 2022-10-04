@@ -5,6 +5,17 @@ import Hero from '../components/hero';
 import Section from '../components/toolSection';
 import Navigator from '../components/navigator';
 
+//Tools
+import {
+  searchEngines,
+  searchEnginesArticles,
+} from '../data/tools/searchEngines';
+import { dns, dnsArticles } from '../data/tools/dns';
+import { messenger, messengerArticles } from '../data/tools/messenger';
+import { email, emailArticles } from '../data/tools/email';
+import { browser, browserArticles } from '../data/tools/browser';
+import { vpn, vpnArticles } from '../data/tools/vpn';
+
 //Styled components
 const Main = styled.main`
   width: 100%;
@@ -15,20 +26,7 @@ const Main = styled.main`
   }
 `;
 
-export default function Home({
-  vpn,
-  browser,
-  email,
-  messenger,
-  dns,
-  search,
-  vpnArticles,
-  browserArticles,
-  emailArticles,
-  messengerArticles,
-  dnsArticles,
-  SearchArticles,
-}) {
+export default function Home() {
   return (
     <>
       <Hero />
@@ -38,8 +36,8 @@ export default function Home({
           id='VPN'
           title='Use a VPN'
           description={`A VPN, or virtual private network, is a tool to secure your internet connection. It makes sure that the data you are sending and receiving is encrypted, preventing your ISP or any malicious actor from seeing what you do.
-
-        You should use a VPN provider that you trust to not harvest and re-sell your data. The best VPNs often charge a monthly subscription - this is a good thing because it means their business model is not reliant upon reselling your data to advertisers.`}
+        
+          You should use a VPN provider that you trust to not harvest and re-sell your data. The best VPNs often charge a monthly subscription - this is a good thing because it means their business model is not reliant upon reselling your data to advertisers.`}
           tools={vpn}
           articles={vpnArticles}
         />
@@ -68,8 +66,8 @@ export default function Home({
           id='DNS'
           title='Secure your DNS'
           description={`First, DNS, or domain name system, is the system that acts like a sort of phone book on the Internet. Instead of having to remember a numerical IP address, such as 76.76.21.21, you can type basicprivacy.org to go to our website. There is a huge directory that records the correspondence between these numerical addresses and domain names to facilitate Internet usage, and to make it easy to move a domain from one server to another.
-
-        In addition, some ISPs may record the metadata of your Internet activity, or the requests you make: the websites you visit, the servers you connect to, and more.`}
+        
+          In addition, some ISPs may record the metadata of your Internet activity, or the requests you make: the websites you visit, the servers you connect to, and more.`}
           tools={dns}
           articles={dnsArticles}
         />
@@ -77,361 +75,10 @@ export default function Home({
           id='Search'
           title='Privacy-first search engine'
           description='You should use a search engine that protects you from tracking, fingerprinting, and unwanted advertisements. DuckDuckGo is a privacy-first search engine that does not store your search history, has strict location and personalization permissions, and publishes regular content teaching people how to be safer on the web.'
-          tools={search}
-          articles={SearchArticles}
+          tools={searchEngines}
+          articles={searchEnginesArticles}
         />
       </Main>
     </>
   );
-}
-
-export async function getStaticProps() {
-  // Initializing a client
-  const notion = new Client({
-    auth: process.env.NOTION_API_KEY,
-  });
-
-  const vpn = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'VPN',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const browser = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Browser',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const email = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Email',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const messenger = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Conversation',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const dns = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'DNS',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const search = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Search',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  //Articles
-  const vpnArticles = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ARTICLES,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'VPN',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const browserArticles = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ARTICLES,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Browser',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const emailArticles = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ARTICLES,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Email',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const messengerArticles = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ARTICLES,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Messenger',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const dnsArticles = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ARTICLES,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'DNS',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const SearchArticles = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ARTICLES,
-    filter: {
-      and: [
-        {
-          property: 'Live',
-          select: {
-            equals: 'Yes',
-          },
-        },
-        {
-          property: 'Type',
-          select: {
-            equals: 'Search',
-          },
-        },
-      ],
-    },
-
-    sorts: [
-      {
-        timestamp: 'last_edited_time',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  return {
-    props: {
-      vpn: vpn.results,
-      browser: browser.results,
-      email: email.results,
-      messenger: messenger.results,
-      dns: dns.results,
-      search: search.results,
-      vpnArticles: vpnArticles.results,
-      browserArticles: browserArticles.results,
-      emailArticles: emailArticles.results,
-      messengerArticles: messengerArticles.results,
-      dnsArticles: dnsArticles.results,
-      SearchArticles: SearchArticles.results,
-    },
-
-    revalidate: 1,
-  };
 }

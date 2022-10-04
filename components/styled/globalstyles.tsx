@@ -25,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
   body {
-    background-color: ${(props) => props.theme.body};
-    color: ${(props) => props.theme.titleColor};
+    background-color: ${({ theme }) => theme.colors.body};
+    color: ${({ theme }) => theme.colors.titleColor};
     font-family: 'Inter', sans-serif;
   }
 

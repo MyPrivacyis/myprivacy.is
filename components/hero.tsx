@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 //Styled Compoenents
 const Hero = styled.header`
@@ -18,13 +18,13 @@ const Hero = styled.header`
 
   h1 {
     font-size: 2.4em;
-    color: ${(props) => props.theme.titleColor};
+    color: ${({ theme }) => theme.colors.titleColor};
     margin-bottom: 16px;
     line-height: 1.4em;
   }
 
   p {
-    color: ${(props) => props.theme.bodyText};
+    color: ${({ theme }) => theme.colors.bodyText};
     line-height: 1.5em;
     margin-bottom: 8px;
   }
@@ -55,7 +55,7 @@ export default function HeroComponent() {
         </p>
         <span>- Edward Snowden</span>
       </div>
-      <img src="/img/hero.png" alt="" Privacy image />
+      <img src='/img/hero.png' alt='Privacy image' />
     </Hero>
   );
 }
