@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Hero from "../components/hero";
+import Hero from '../components/hero';
 
 //Styled components
 const Main = styled.main`
@@ -77,27 +77,27 @@ export default function Home() {
         <Spacer />
         <CryptoTitle>Bitcoin (btc)</CryptoTitle>
         <Input
-          type="text"
-          value="bc1qpj0hjygujakvhgl9xhrczyy02ak2ld8uupkxuq"
-          readonly
+          type='text'
+          value='bc1qpj0hjygujakvhgl9xhrczyy02ak2ld8uupkxuq'
+          readOnly
         />
         <CryptoTitle>Ethereum (eth)</CryptoTitle>
         <Input
-          type="text"
-          value="0xCC5dfAd0b7000C253daFCc31Df133F9517b25C44"
-          readonly
+          type='text'
+          value='0xCC5dfAd0b7000C253daFCc31Df133F9517b25C44'
+          readOnly
         />
         <CryptoTitle>Cardano (ada)</CryptoTitle>
         <Input
-          type="text"
-          value="addr1qy02tequjapxuhjgz54vzu4l07raan4cv6kdzukuv5y5khpfnsjrg4zukdgq9j5rtnkscv29mj7pd903p9rgudwdm45sz3x893"
-          readonly
+          type='text'
+          value='addr1qy02tequjapxuhjgz54vzu4l07raan4cv6kdzukuv5y5khpfnsjrg4zukdgq9j5rtnkscv29mj7pd903p9rgudwdm45sz3x893'
+          readOnly
         />
         <CryptoTitle>Dogecoin</CryptoTitle>
         <Input
-          type="text"
-          value="D8vLbjEvfPqBVVw1hj1w1pWM2HGhZUyb5q"
-          readonly
+          type='text'
+          value='D8vLbjEvfPqBVVw1hj1w1pWM2HGhZUyb5q'
+          readOnly
         />
       </Main>
     </>
