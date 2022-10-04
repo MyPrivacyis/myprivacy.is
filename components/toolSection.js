@@ -193,7 +193,7 @@ export default function CardFile({ id, title, description, tools, articles }) {
         {tools.map((data) => (
           <CardLink
             key={data.id}
-            href={data.properties.Link.url + '?utm_source=myprivacy.is'}
+            href={data.properties.Link.url}
             target='_blank'
           >
             <Card>
@@ -410,7 +410,7 @@ export default function CardFile({ id, title, description, tools, articles }) {
         {articles.map((data) => (
           <Article
             key={data.id}
-            href={data.properties.Link.url + '?utm_source=myprivacy.is'}
+            href={data.properties.Link.url}
             target='_blank'
           >
             <svg
