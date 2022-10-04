@@ -1,1 +1,1 @@
-# MyPrivacy.is
+# Basicprivacy.org
