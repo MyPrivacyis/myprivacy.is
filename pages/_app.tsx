@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Router from 'next/router';
+import PlausibleProvider from 'next-plausible';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
@@ -29,8 +29,19 @@ const theme: DefaultTheme = {
 };
 
 export default function App({ Component, pageProps }) {
+  const domain =
+    process.env.NODE_ENV === 'production'
+      ? 'basicprivacy.org'
+      : 'localhost:3000';
+
   return (
-    <>
+    <PlausibleProvider
+      domain={domain}
+      trackOutboundLinks
+      trackFileDownloads
+      enabled={domain.indexOf('localhost') !== -1 || undefined}
+      trackLocalhost={domain.indexOf('localhost') !== -1}
+    >
       <Head>
         <link rel='icon' type='image/svg+xml' href='/img/meta/favicon.svg' />
         <link rel='icon' type='image/png' href='/img/meta/favicon.png' />
@@ -49,6 +60,6 @@ export default function App({ Component, pageProps }) {
         <Header />
         <Component {...pageProps} />
       </ThemeProvider>
-    </>
+    </PlausibleProvider>
   );
 }
